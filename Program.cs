@@ -28,7 +28,7 @@ builder.Services.AddSignalR();
 
 var app = builder.Build();
 
-     app.UseCors("AllowOrigin");
+     app.UseCors("AllowOrigin"); 
 
 app.UseRouting();
 // Configure the HTTP request pipeline.
