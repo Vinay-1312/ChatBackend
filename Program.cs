@@ -14,14 +14,14 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowOrigin",
-        builder => builder
-            .WithOrigins("http://localhost:3000", "https://preeminent-salamander-21a7e9.netlify.app") // Add your Netlify app's domain
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials());
-});
+    {
+        options.AddPolicy("AllowOrigin", builder =>
+            builder.WithOrigins("https://preeminent-salamander-21a7e9.netlify.app")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .WithExposedHeaders("Content-Disposition")
+                   .AllowCredentials());
+    });
 
 
 builder.Services.AddSignalR();
