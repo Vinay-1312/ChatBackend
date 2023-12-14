@@ -19,7 +19,6 @@ builder.Services.AddCors(options =>
             builder.WithOrigins("https://preeminent-salamander-21a7e9.netlify.app")
                    .AllowAnyHeader()
                    .AllowAnyMethod()
-                   .WithExposedHeaders("Content-Disposition")
                    .AllowCredentials());
     });
 
@@ -29,7 +28,7 @@ builder.Services.AddSignalR();
 
 var app = builder.Build();
 
-   app.UseCors("AllowAnyOriginPolicy");
+     app.UseCors("AllowOrigin");
 
 app.UseRouting();
 // Configure the HTTP request pipeline.
